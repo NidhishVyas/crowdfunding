@@ -51,28 +51,28 @@ const RequestRow = ({
 
   return (
     <Tr
-      bg={
-        readyToFinalize && !request.complete
-          ? useColorModeValue("teal.100", "teal.700")
-          : useColorModeValue("gray.100", "gray.700")
-      }
+      // bg={
+      //   readyToFinalize && !request.complete
+      //     ? useColorModeValue("teal.100", "teal.700")
+      //     : useColorModeValue("gray.100", "gray.700")
+      // }
       opacity={request.complete ? "0.4" : "1"}
     >
       <Td>{id} </Td>
-      <Td>{request.description}</Td>
+      <Td>Need for xyz</Td>
       <Td isNumeric>
-        ETH 
+        10 ETH 
       </Td>
       <Td>
         <Link
           color="teal.500"
           isExternal
         >
-          {" "}
+          0X654647
         </Link>
       </Td>
       <Td>
-        {request.approvalCount}/{approversCount}
+        1/{approversCount}
       </Td>
       <Td>
         <HStack spacing={2}>
@@ -84,20 +84,20 @@ const RequestRow = ({
             fontSize={"1em"}
           >
             <WarningIcon
-              color={useColorModeValue("red.600", "red.300")}
+              // color={useColorModeValue("red.600", "red.300")}
               display={errorMessageApprove ? "inline-block" : "none"}
             />
           </Tooltip>
           {request.complete ? (
             <Tooltip
               label="This Request has been finalized & withdrawn to the recipient,it may then have less no of approvers"
-              bg={useColorModeValue("white", "gray.700")}
+              // bg={useColorModeValue("white", "gray.700")}
               placement={"top"}
-              color={useColorModeValue("gray.800", "white")}
+              // color={useColorModeValue("gray.800", "white")}
               fontSize={"1em"}
             >
               <CheckCircleIcon
-                color={useColorModeValue("green.600", "green.300")}
+                // color={useColorModeValue("green.600", "green.300")}
               />
             </Tooltip>
           ) : (
@@ -134,13 +134,13 @@ const RequestRow = ({
         {request.complete ? (
           <Tooltip
               label="This Request has been finalized & withdrawn to the recipient,it may then have less no of approvers"
-            bg={useColorModeValue("white", "gray.700")}
+            // bg={useColorModeValue("white", "gray.700")}
             placement={"top"}
-            color={useColorModeValue("gray.800", "white")}
+            // color={useColorModeValue("gray.800", "white")}
             fontSize={"1em"}
           >
             <CheckCircleIcon
-              color={useColorModeValue("green.600", "green.300")}
+              // color={useColorModeValue("green.600", "green.300")}
             />
           </Tooltip>
         ) : (
@@ -161,14 +161,14 @@ const RequestRow = ({
 
             <Tooltip
               label="This Request is ready to be Finalized because it has been approved by 50% Approvers"
-              bg={useColorModeValue("white", "gray.700")}
+              // bg={useColorModeValue("white", "gray.700")}
               placement={"top"}
-              color={useColorModeValue("gray.800", "white")}
+              // color={useColorModeValue("gray.800", "white")}
               fontSize={"1.2em"}
             >
               <InfoIcon
                 as="span"
-                color={useColorModeValue("teal.800", "white")}
+                // color={useColorModeValue("teal.800", "white")}
                 display={
                   readyToFinalize && !request.complete ? "inline-block" : "none"
                 }
@@ -204,7 +204,7 @@ export default function Requests({
             <Box py="4">
               <Text fontSize={"lg"} color={"teal.400"}>
                 <ArrowBackIcon mr={2} />
-                <a href={`/campaign/${campaignId}`}>
+                <a href={`/campaign/CampaignSingle`}>
                   Back to Campaign
                 </a>
               </Text>
@@ -250,19 +250,19 @@ export default function Requests({
             <Flex flexDirection={{ base: "column", lg: "row" }} py={4}>
               <Box py="2" pr="2">
                 <Heading
-                  textAlign={useBreakpointValue({ base: "left" })}
+                  // textAlign={useBreakpointValue({ base: "left" })}
                   fontFamily={"heading"}
-                  color={useColorModeValue("gray.800", "white")}
+                  // color={useColorModeValue("gray.800", "white")}
                   as="h3"
                   isTruncated
                   maxW={"3xl"}
                 >
-                  Withdrawal Requests for namen-NAME Campaign
+                  Withdrawal Requests for Covid Relief Fund
                 </Heading>
               </Box>
               <Spacer />
               <Box py="2">
-                <a href={`/campaign/5/requests/new`}>
+                <a href={`/campaign/withdrawal/requests/new`}>
                   <Button
                     display={{ sm: "inline-flex" }}
                     justify={"flex-end"}

@@ -11,7 +11,6 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { FaInstagram, FaTwitter, FaGithub, FaGlobe } from "react-icons/fa";
-import NextLink from "next/link";
 
 const SocialButton = ({ children, label, href }) => {
   return (
@@ -76,11 +75,11 @@ export default function Footer() {
               zIndex: -1,
             }}
           >
-            <NextLink href="/">🤝BetterFund</NextLink>
+            <a href="/">🤝BetterFund</a>
           </Box>
         </Heading>
         <Stack direction={"row"} spacing={6}>
-          <NextLink href="/">Home</NextLink>
+          <a href="/">Home</a>
           <Link
             href={
               "https://github.com/harsh242/betterfund-crowdfunding-in-blockchain"

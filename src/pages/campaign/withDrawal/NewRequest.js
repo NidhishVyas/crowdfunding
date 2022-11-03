@@ -32,7 +32,7 @@ export default function NewRequest() {
         <Stack spacing={8} mx={"auto"} maxW={"2xl"} py={12} px={6}>
           <Text fontSize={"lg"} color={"teal.400"} justifyContent="center">
             <ArrowBackIcon mr={2} />
-            <a href={`/campaign/7/requests`}>Back to Requests</a>
+            <a href={`/campaign/withdrawal/requests`}>Back to Requests</a>
           </Text>
           <Stack>
             <Heading fontSize={"4xl"}>Create a Withdrawal Request 💸</Heading>

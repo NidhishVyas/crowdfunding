@@ -1,3 +1,4 @@
+import DarkModeSwitch from "./DarkModeSwitch";
 import {
   Box,
   Flex,
@@ -13,10 +14,7 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-} from "@chakra-ui/react";;
-
-import NextLink from "next/link";
-import DarkModeSwitch from "./DarkModeSwitch";
+} from "@chakra-ui/react";
 
 export default function NavBar() {
   return (
@@ -69,7 +67,7 @@ export default function NavBar() {
                   zIndex: -1,
                 }}
               >
-                <NextLink href="/">🤝BetterFund</NextLink>
+                <a href="/">🤝BetterFund</a>
               </Box>
             </Heading>
           </Flex>
@@ -86,7 +84,7 @@ export default function NavBar() {
               variant={"link"}
               display={{ base: "none", md: "inline-flex" }}
             >
-              <NextLink href="/campaign/new">Create Campaign</NextLink>
+              <a href="/campaign/new">Create Campaign</a>
             </Button>
             <Button
               fontSize={"md"}
@@ -94,33 +92,27 @@ export default function NavBar() {
               variant={"link"}
               display={{ base: "none", md: "inline-flex" }}
             >
-              <NextLink href="/#howitworks"> How it Works</NextLink>
+              <a href="/#howitworks"> How it Works</a>
             </Button>
 
-              <div>
-                <Button
-                  display={{ base: "none", md: "inline-flex" }}
-                  fontSize={"md"}
-                  fontWeight={600}
-                  color={"white"}
-                  bg={"teal.400"}
-                  href={"#"}
-                  _hover={{
-                    bg: "teal.300",
-                  }}
-                  onClick={() =>{} }
-                >
-                  Connect Wallet
-                </Button>
-              </div>
-
-
+            <div>
+              <Button
+                display={{ base: "none", md: "inline-flex" }}
+                fontSize={"md"}
+                fontWeight={600}
+                color={"white"}
+                bg={"teal.400"}
+                href={"#"}
+                _hover={{
+                  bg: "teal.300",
+                }}
+                onClick={() => {}}
+              >
+                Connect Wallet
+              </Button>
+            </div>
             <DarkModeSwitch />
           </Stack>
-
-          <Flex display={{ base: "flex", md: "none" }}>
-            <DarkModeSwitch />
-          </Flex>
         </Container>
       </Flex>
     </Box>

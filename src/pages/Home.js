@@ -1,5 +1,4 @@
 import { useState } from "react";
-import NextLink from "next/link";
 import styles from "../styles/Home.module.css";
 
 import {
@@ -62,7 +61,7 @@ function CampaignCard({
   ethPrice,
 }) {
   return (
-    <a href={`/campaign/${id}`}>
+    <a href={`/campaign/CampaignSingle`}>
       <Box
         bg={useColorModeValue("white", "gray.800")}
         maxW={{ md: "sm" }}
@@ -205,7 +204,7 @@ export default function Home( ) {
           >
             Crowdfunding using the powers of <br /> Crypto & Blockchain 😄{" "}
           </Heading>
-          <NextLink href="/campaign/new">
+          <a href="/campaign/new">
             <Button
               display={{ sm: "inline-flex" }}
               fontSize={"md"}
@@ -218,7 +217,7 @@ export default function Home( ) {
             >
               Create Campaign
             </Button>
-          </NextLink>
+          </a>
         </Container>
         <Container py={{ base: "4", md: "12" }} maxW={"7xl"}>
           <HStack spacing={2}>

@@ -31,8 +31,6 @@ import {
 import { InfoIcon } from "@chakra-ui/icons";
 import Confetti from "react-confetti";
 
-
-
 function StatsCard(props) {
   const { title, stat, info } = props;
   return (
@@ -94,9 +92,9 @@ export default function CampaignSingle({
 
   return (
     <div>
-        <title>Campaign Details</title>
-        <meta name="description" content="Create a Withdrawal Request" />
-        <link rel="icon" href="/logo.svg" />
+      <title>Campaign Details</title>
+      <meta name="description" content="Create a Withdrawal Request" />
+      <link rel="icon" href="/logo.svg" />
       {isSubmitted ? <Confetti width={width} height={height} /> : null}
       <main>
         {" "}
@@ -135,39 +133,50 @@ export default function CampaignSingle({
                 lineHeight={1.1}
                 fontSize={{ base: "3xl", sm: "4xl", md: "5xl" }}
               >
-                {name}
+                Covid Relief Fund
               </Heading>
               <Text
                 color={useColorModeValue("gray.500", "gray.200")}
                 fontSize={{ base: "lg" }}
               >
-                {description}
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse ultrices felis lacus, eget volutpat sapien tristique
+                nec. Mauris laoreet faucibus varius. Pellentesque id risus
+                condimentum, eleifend magna id, aliquam orci. Praesent egestas
+                volutpat cursus. Aenean eu dolor quis ante pharetra commodo non
+                placerat sem. Class aptent taciti sociosqu ad litora torquent
+                per conubia nostra, per inceptos himenaeos. Nullam at euismod
+                orci. Nulla cursus, nisi quis facilisis tempus, mi ipsum
+                molestie leo, nec tincidunt diam arcu vel tellus. Orci varius
+                natoque penatibus et magnis dis parturient montes, nascetur
+                ridiculus mus.
               </Text>
               <Box mx={"auto"} w={"full"}>
                 <SimpleGrid columns={{ base: 1 }} spacing={{ base: 5 }}>
                   <StatsCard
                     title={"Minimum Contribution"}
+                    stat={"0.0001 ETH"}
                     info={
                       "You must contribute at least this much in Wei ( 1 ETH = 10 ^ 18 Wei) to become an approver"
                     }
                   />
                   <StatsCard
                     title={"Wallet Address of Campaign Creator"}
-                    stat={manager}
+                    stat={"0X85375"}
                     info={
                       "The Campaign Creator created the campaign and can create requests to withdraw money."
                     }
                   />
                   <StatsCard
                     title={"Number of Requests"}
-                    stat={requestsCount}
+                    stat={20}
                     info={
                       "A request tries to withdraw money from the contract. Requests must be approved by approvers"
                     }
                   />
                   <StatsCard
                     title={"Number of Approvers"}
-                    stat={approversCount}
+                    stat={10}
                     info={
                       "Number of people who have already donated to this campaign"
                     }
@@ -211,9 +220,7 @@ export default function CampaignSingle({
                       pt="2"
                     >
                       <Text as="span" fontWeight={"bold"}>
-                        {balance > 0
-                          ? web3.utils.fromWei(balance, "ether")
-                          : "0, Become a Donor 😄"}
+                        {balance > 0 ? 10 : "0, Become a Donor 😄"}
                       </Text>
                       <Text
                         as="span"
@@ -230,8 +237,7 @@ export default function CampaignSingle({
                         display={balance > 0 ? "inline" : "none"}
                         fontWeight={"normal"}
                         color={useColorModeValue("gray.500", "gray.200")}
-                      >
-                      </Text>
+                      ></Text>
                     </Box>
 
                     <Text fontSize={"md"} fontWeight="normal">
@@ -302,7 +308,7 @@ export default function CampaignSingle({
                 p={{ base: 4, sm: 6, md: 8 }}
                 spacing={4}
               >
-                <a href={`/campaign/${id}/requests`}>
+                <a href={`/campaign/withdrawal/requests`}>
                   <Button
                     fontFamily={"heading"}
                     w={"full"}
