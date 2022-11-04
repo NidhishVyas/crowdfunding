@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "../styles/Home.module.css";
+import styles from "../../styles/Home.module.css";
 
 import {
   Heading,
@@ -17,37 +17,34 @@ import {
   Icon,
   chakra,
   Tooltip,
-  Link,
   SkeletonCircle,
   HStack,
-  Stack,
+  // Stack,
   Progress,
 } from "@chakra-ui/react";
 
-import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { FaHandshake } from "react-icons/fa";
-import { FcShare, FcDonate, FcMoneyTransfer } from "react-icons/fc";
+import {  FaEdit, FaTrash } from "react-icons/fa";
 
-const Feature = ({ title, text, icon }) => {
-  return (
-    <Stack>
-      <Flex
-        w={16}
-        h={16}
-        align={"center"}
-        justify={"center"}
-        color={"white"}
-        rounded={"full"}
-        bg={useColorModeValue("gray.100", "gray.700")}
-        mb={1}
-      >
-        {icon}
-      </Flex>
-      <Text fontWeight={600}>{title}</Text>
-      <Text color={useColorModeValue("gray.500", "gray.200")}>{text}</Text>
-    </Stack>
-  );
-};
+// const Feature = ({ title, text, icon }) => {
+//   return (
+//     <Stack>
+//       <Flex
+//         w={16}
+//         h={16}
+//         align={"center"}
+//         justify={"center"}
+//         color={"white"}
+//         rounded={"full"}
+//         bg={useColorModeValue("gray.100", "gray.700")}
+//         mb={1}
+//       >
+//         {icon}
+//       </Flex>
+//       <Text fontWeight={600}>{title}</Text>
+//       <Text color={useColorModeValue("gray.500", "gray.200")}>{text}</Text>
+//     </Stack>
+//   );
+// };
 
 function CampaignCard({
   name,
@@ -113,12 +110,20 @@ function CampaignCard({
             >
               <chakra.a display={"flex"}>
                 <Icon
-                  as={FaHandshake}
-                  h={7}
-                  w={7}
+                  as={FaEdit}
+                  h={5}
+                  w={5}
                   alignSelf={"center"}
                   color={"teal.400"}
-                />{" "}
+                />
+                <Icon
+                  as={FaTrash}
+                  h={4}
+                  w={4}
+                  ml={2}
+                  alignSelf={"center"}
+                  color={"teal.400"}
+                />
               </chakra.a>
             </Tooltip>
           </Flex>
@@ -179,7 +184,7 @@ function CampaignCard({
 }
 
 export default function Home() {
-  const [campaignList /*setCampaignList*/] = useState([]);
+  const [campaignList, /*setCampaignList*/] = useState([]);
 
   return (
     <div>
@@ -199,7 +204,7 @@ export default function Home() {
             as="h1"
             py={4}
           >
-            Crowdfunding using the powers of <br /> Crypto & Blockchain 😄
+            My Campaign
           </Heading>
           <a href="/campaign/new">
             <Button
@@ -272,45 +277,6 @@ export default function Home() {
               <Skeleton height="25rem" />
             </SimpleGrid>
           )}
-        </Container>
-        <Container py={{ base: "4", md: "12" }} maxW={"7xl"} id="howitworks">
-          <HStack spacing={2}>
-            <SkeletonCircle size="4" />
-            <Heading as="h2" size="lg">
-              How BetterFund Works
-            </Heading>
-          </HStack>
-          <Divider marginTop="4" />
-          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} py={8}>
-            <Feature
-              icon={<Icon as={FcDonate} w={10} h={10} />}
-              title={"Create a Campaign for Fundraising"}
-              text={
-                "It’ll take only 2 minutes. Just enter a few details about the funds you are raising for."
-              }
-            />
-            <Feature
-              icon={<Icon as={FcShare} w={10} h={10} />}
-              title={"Share your Campaign"}
-              text={
-                "All you need to do is share the Campaign with your friends, family and others. In no time, support will start pouring in."
-              }
-            />
-            <Feature
-              icon={<Icon as={FcMoneyTransfer} w={10} h={10} />}
-              title={"Request and Withdraw Funds"}
-              text={
-                "The funds raised can be withdrawn directly to the recipient when 50% of the contributors approve of the Withdrawal Request."
-              }
-            />
-          </SimpleGrid>
-          <Heading as="h2" size="lg" mt="8">
-            For any queries raise an issue on{" "}
-            <Link color="teal.500" href="" isExternal>
-              the Github Repo <ExternalLinkIcon mx="2px" />
-            </Link>{" "}
-          </Heading>
-          <Divider marginTop="4" />
         </Container>
       </main>
     </div>

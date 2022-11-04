@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import {
-  Flex,
   Box,
   FormControl,
   FormLabel,
@@ -12,10 +11,6 @@ import {
   useColorModeValue,
   InputRightAddon,
   InputGroup,
-  Alert,
-  AlertIcon,
-  AlertDescription,
-  FormHelperText,
   Textarea,
 } from "@chakra-ui/react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
@@ -31,7 +26,7 @@ export default function NewCampaign() {
         <Stack spacing={8} mx={"auto"} maxW={"2xl"} py={12} px={6}>
           <Text fontSize={"lg"} color={"teal.400"}>
             <ArrowBackIcon mr={2} />
-            <a href="/"> Back to Home</a>
+            <a href="/campaign"> Back to Home</a>
           </Text>
           <Stack>
             <Heading fontSize={"4xl"}>Create a New Campaign 📢</Heading>

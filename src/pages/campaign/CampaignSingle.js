@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useWindowSize } from "react-use";
 import {
   Box,
@@ -24,8 +24,6 @@ import {
   AlertDescription,
   Progress,
   CloseButton,
-  FormHelperText,
-  Link,
 } from "@chakra-ui/react";
 
 import { InfoIcon } from "@chakra-ui/icons";
@@ -87,7 +85,7 @@ export default function CampaignSingle({
   ETHPrice,
 }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [amountInUSD, setAmountInUSD] = useState();
+  const [amountInUSD /*setAmountInUSD*/] = useState();
   const { width, height } = useWindowSize();
 
   return (

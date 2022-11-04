@@ -81,14 +81,12 @@ export default function Footer() {
         <Stack direction={"row"} spacing={6}>
           <a href="/">Home</a>
           <Link
-            href={
-              "https://github.com/harsh242/betterfund-crowdfunding-in-blockchain"
-            }
+            href=""
             isExternal
           >
             Github
           </Link>
-          <Link href={"mailto:harshbadhai242@gmail.com"} isExternal>
+          <Link href="" isExternal>
             Contact
           </Link>
         </Stack>
@@ -108,24 +106,24 @@ export default function Footer() {
           justify={{ base: "center", md: "space-between" }}
           align={{ base: "center", md: "center" }}
         >
-          <Text>🌐 Made while 💩 by Harsh, Hritvik , Nischal & Aaditya</Text>
+          <Text>Made by Emaad, Nidhish & Sahil</Text>
           <Stack direction={"row"} spacing={6}>
-            <SocialButton label={"Website"} href={"https://harshbadhai.me/"}>
+            <SocialButton label={"Website"} href="">
               {" "}
               <FaGlobe />
             </SocialButton>
             <SocialButton
               label={"Twitter"}
-              href={"https://twitter.com/harshbadhai28"}
+              href=""
             >
               <FaTwitter />
             </SocialButton>
-            <SocialButton label={"Github"} href={"https://github.com/harsh242"}>
+            <SocialButton label={"Github"} href="">
               <FaGithub />
             </SocialButton>
             <SocialButton
               label={"Instagram"}
-              href={"https://www.instagram.com/frames_by._harsh/"}
+              href=""
             >
               <FaInstagram />
             </SocialButton>

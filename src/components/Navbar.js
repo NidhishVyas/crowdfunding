@@ -2,18 +2,11 @@ import DarkModeSwitch from "./DarkModeSwitch";
 import {
   Box,
   Flex,
-  Text,
-  IconButton,
   Button,
   Stack,
   useColorModeValue,
-  useBreakpointValue,
   Container,
   Heading,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
 } from "@chakra-ui/react";
 
 export default function NavBar() {

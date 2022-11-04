@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Heading,
-  useBreakpointValue,
   useColorModeValue,
   Text,
   Button,
@@ -23,7 +22,6 @@ import {
   AlertIcon,
   AlertDescription,
   HStack,
-  Stack,
   Link,
 } from "@chakra-ui/react";
 import {
@@ -33,21 +31,12 @@ import {
   WarningIcon,
 } from "@chakra-ui/icons";
 
-
-const RequestRow = ({
-  id,
-  request,
-  approversCount,
-  campaignId,
-  disabled,
-  ETHPrice,
-}) => {
+const RequestRow = ({ id, request, approversCount, disabled }) => {
   const readyToFinalize = request.approvalCount > approversCount / 2;
-  const [errorMessageApprove, setErrorMessageApprove] = useState();
-  const [loadingApprove, setLoadingApprove] = useState(false);
-  const [errorMessageFinalize, setErrorMessageFinalize] = useState();
-  const [loadingFinalize, setLoadingFinalize] = useState(false);
-
+  const [errorMessageApprove, /*setErrorMessageApprove*/] = useState();
+  const [loadingApprove, /*setLoadingApprove*/] = useState(false);
+  const [errorMessageFinalize, /*setErrorMessageFinalize*/] = useState();
+  const [loadingFinalize, /*setLoadingFinalize*/] = useState(false);
 
   return (
     <Tr
@@ -60,20 +49,13 @@ const RequestRow = ({
     >
       <Td>{id} </Td>
       <Td>Need for xyz</Td>
-      <Td isNumeric>
-        10 ETH 
-      </Td>
+      <Td isNumeric>10 ETH</Td>
       <Td>
-        <Link
-          color="teal.500"
-          isExternal
-        >
+        <Link color="teal.500" isExternal>
           0X654647
         </Link>
       </Td>
-      <Td>
-        1/{approversCount}
-      </Td>
+      <Td>1/{approversCount}</Td>
       <Td>
         <HStack spacing={2}>
           <Tooltip
@@ -97,7 +79,7 @@ const RequestRow = ({
               fontSize={"1em"}
             >
               <CheckCircleIcon
-                // color={useColorModeValue("green.600", "green.300")}
+              // color={useColorModeValue("green.600", "green.300")}
               />
             </Tooltip>
           ) : (
@@ -109,7 +91,7 @@ const RequestRow = ({
                 color: "white",
               }}
               // onClick={onApprove}
-              isDisabled={disabled || request.approvalCount == approversCount}
+              isDisabled={disabled || request.approvalCount === approversCount}
               isLoading={loadingApprove}
             >
               Approve
@@ -133,14 +115,14 @@ const RequestRow = ({
         </Tooltip>
         {request.complete ? (
           <Tooltip
-              label="This Request has been finalized & withdrawn to the recipient,it may then have less no of approvers"
+            label="This Request has been finalized & withdrawn to the recipient,it may then have less no of approvers"
             // bg={useColorModeValue("white", "gray.700")}
             placement={"top"}
             // color={useColorModeValue("gray.800", "white")}
             fontSize={"1em"}
           >
             <CheckCircleIcon
-              // color={useColorModeValue("green.600", "green.300")}
+            // color={useColorModeValue("green.600", "green.300")}
             />
           </Tooltip>
         ) : (
@@ -189,14 +171,13 @@ export default function Requests({
   name,
   ETHPrice,
 }) {
-  const [requestsList, setRequestsList] = useState([]);
-  const [FundNotAvailable, setFundNotAvailable] = useState(false);
-
+  const [requestsList, /*setRequestsList*/] = useState([]);
+  const [FundNotAvailable, /*setFundNotAvailable*/] = useState(false);
 
   return (
     <div>
-        <title>Campaign Withdrawal Requests</title>
-        <meta name="description" content="Create a Withdrawal Request" />
+      <title>Campaign Withdrawal Requests</title>
+      <meta name="description" content="Create a Withdrawal Request" />
 
       <main>
         <Container px={{ base: "4", md: "12" }} maxW={"7xl"} align={"left"}>
@@ -204,9 +185,7 @@ export default function Requests({
             <Box py="4">
               <Text fontSize={"lg"} color={"teal.400"}>
                 <ArrowBackIcon mr={2} />
-                <a href={`/campaign/CampaignSingle`}>
-                  Back to Campaign
-                </a>
+                <a href={`/campaign/CampaignSingle`}>Back to Campaign</a>
               </Text>
             </Box>
             <Spacer />
@@ -296,14 +275,14 @@ export default function Requests({
                   </Tr>
                 </Thead>
                 <Tbody>
-                      <RequestRow
-                        id="1"
-                        request="2"
-                        approversCount="3"
-                        campaignId="4"
-                        disabled="6"
-                        ETHPrice="5"
-                      />
+                  <RequestRow
+                    id="1"
+                    request="2"
+                    approversCount="3"
+                    campaignId="4"
+                    disabled="6"
+                    ETHPrice="5"
+                  />
                 </Tbody>
                 <TableCaption textAlign="left" ml="-2">
                   Found 9 Requests
@@ -313,11 +292,7 @@ export default function Requests({
           </Container>
         ) : (
           <div>
-            <Container
-              px={{ base: "4", md: "12" }}
-              maxW={"7xl"}
-              align={"left"}
-            >
+            <Container px={{ base: "4", md: "12" }} maxW={"7xl"} align={"left"}>
               <SimpleGrid rows={{ base: 5 }} spacing={2}>
                 <Skeleton height="5rem" />
                 <Skeleton height="5rem" />
