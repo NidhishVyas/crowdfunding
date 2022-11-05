@@ -206,7 +206,7 @@ export default function CampaignSingle({
                       px="4"
                     >
                       <InfoIcon
-                        color={useColorModeValue("teal.800", "white")}
+                        color={useColorModeValue("red.800", "white")}
                       />
                     </Tooltip>
                   </StatLabel>
@@ -241,7 +241,7 @@ export default function CampaignSingle({
                     <Text fontSize={"md"} fontWeight="normal">
                       target of ETH
                     </Text>
-                    <Progress colorScheme="teal" size="sm" mt={4} />
+                    <Progress colorScheme="red" size="sm" mt={4} />
                   </StatNumber>
                 </Stat>
               </Box>
@@ -255,7 +255,7 @@ export default function CampaignSingle({
                 <Heading
                   lineHeight={1.1}
                   fontSize={{ base: "2xl", sm: "3xl" }}
-                  color={useColorModeValue("teal.600", "teal.200")}
+                  color={useColorModeValue("red.600", "red.200")}
                 >
                   Contribute Now!
                 </Heading>
@@ -283,13 +283,15 @@ export default function CampaignSingle({
                         fontFamily={"heading"}
                         mt={4}
                         w={"full"}
-                        bgGradient="linear(to-r, teal.400,green.400)"
+                        // bgGradient="linear(to-r, red.400,green.400)"
+                        bg={"red.400"}
                         color={"white"}
                         _hover={{
-                          bgGradient: "linear(to-r, teal.400,blue.400)",
+                          // bgGradient: "linear(to-r, red.400,blue.400)",
+                          bg: "red.300",
                           boxShadow: "xl",
                         }}
-                        isDisabled={amountInUSD ? false : true}
+                        // isDisabled={amountInUSD ? false : true}
                         type="submit"
                       >
                         Contribute
@@ -310,10 +312,12 @@ export default function CampaignSingle({
                   <Button
                     fontFamily={"heading"}
                     w={"full"}
-                    bgGradient="linear(to-r, teal.400,green.400)"
+                    // bgGradient="linear(to-r, red.400,red.300)"
                     color={"white"}
+                    bg={"red.400"}
                     _hover={{
-                      bgGradient: "linear(to-r, teal.400,blue.400)",
+                      // bgGradient: "linear(to-r, red.400,blue.400)",
+                      bg: "red.300",
                       boxShadow: "xl",
                     }}
                   >

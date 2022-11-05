@@ -117,7 +117,7 @@ function CampaignCard({
                   h={7}
                   w={7}
                   alignSelf={"center"}
-                  color={"teal.400"}
+                  color={"red.400"}
                 />{" "}
               </chakra.a>
             </Tooltip>
@@ -140,7 +140,7 @@ function CampaignCard({
                 pt="2"
               >
                 <Text as="span" fontWeight={"bold"}>
-                  {balance > 0 ? "aaaa" : "0, Become a Donor 😄"}
+                  {balance > 0 ? target - balance : "0, Become a Donor 😄"}
                 </Text>
                 <Text
                   as="span"
@@ -161,13 +161,13 @@ function CampaignCard({
               </Box>
 
               <Text fontSize={"md"} fontWeight="normal">
-                target of ETH
+                target of {target} ETH
               </Text>
               <Progress
-                colorScheme="teal"
+                colorScheme="red"
                 size="sm"
-                value={10}
-                max={100}
+                value={balance}
+                max={target}
                 mt="2"
               />
             </Box>{" "}
@@ -183,7 +183,7 @@ export default function Home() {
 
   return (
     <div>
-      <title>BetterFund</title>
+      <title>CrowdFund</title>
       <meta
         name="description"
         content="Transparent Crowdfunding in Blockchain"
@@ -207,9 +207,9 @@ export default function Home() {
               fontSize={"md"}
               fontWeight={600}
               color={"white"}
-              bg={"teal.400"}
+              bg={"red.400"}
               _hover={{
-                bg: "teal.300",
+                bg: "red.300",
               }}
             >
               Create Campaign
@@ -230,37 +230,37 @@ export default function Home() {
             <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} py={8}>
               <div>
                 <CampaignCard
-                  name="hello hello"
-                  description="hello hello hello hello hello hello hello hello hello hello"
-                  creatorId="1"
-                  imageURL="https://cdni.autocarindia.com/utils/imageresizer.ashx?n=https://cms.haymarketindia.net/model/uploads/modelimages/Mahindra-Scorpio-N-300620221053.jpg&w=872&h=578&q=75&c=1"
+                  name="Covid Releif Fund"
+                  description="lorem ipsum"
+                  creatorId="C01"
+                  imageURL="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
                   id="1"
-                  target="1"
-                  balance="1"
+                  target="125"
+                  balance="0"
                   ethPrice="1"
                 />
               </div>
               <div>
                 <CampaignCard
-                  name="hello hello"
+                  name="Payal Foundation"
                   description="hello hello hello hello hello hello hello hello hello hello"
-                  creatorId="1"
-                  imageURL="https://cdni.autocarindia.com/utils/imageresizer.ashx?n=https://cms.haymarketindia.net/model/uploads/modelimages/Mahindra-Scorpio-N-300620221053.jpg&w=872&h=578&q=75&c=1"
+                  creatorId="C02"
+                  imageURL="https://images.unsplash.com/photo-1498712681408-fdcfb0eca86e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1776&q=80"
                   id="1"
-                  target="1"
-                  balance="1"
+                  target="250"
+                  balance="45"
                   ethPrice="1"
                 />
               </div>
               <div>
                 <CampaignCard
-                  name="hello hello"
+                  name="Oswald Trust"
                   description="hello hello hello hello hello hello hello hello hello hello"
-                  creatorId="1"
-                  imageURL="https://cdni.autocarindia.com/utils/imageresizer.ashx?n=https://cms.haymarketindia.net/model/uploads/modelimages/Mahindra-Scorpio-N-300620221053.jpg&w=872&h=578&q=75&c=1"
+                  creatorId="C03"
+                  imageURL="https://images.unsplash.com/photo-1602007503586-5df8cdb2c692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80"
                   id="1"
-                  target="1"
-                  balance="1"
+                  target="180"
+                  balance="84"
                   ethPrice="1"
                 />
               </div>
@@ -277,7 +277,7 @@ export default function Home() {
           <HStack spacing={2}>
             <SkeletonCircle size="4" />
             <Heading as="h2" size="lg">
-              How BetterFund Works
+              How CrowdFund Works
             </Heading>
           </HStack>
           <Divider marginTop="4" />
@@ -306,8 +306,8 @@ export default function Home() {
           </SimpleGrid>
           <Heading as="h2" size="lg" mt="8">
             For any queries raise an issue on{" "}
-            <Link color="teal.500" href="" isExternal>
-              the Github Repo <ExternalLinkIcon mx="2px" />
+            <Link color="red.500" href="" isExternal>
+              our Email Address <ExternalLinkIcon mx="2px" />
             </Link>{" "}
           </Heading>
           <Divider marginTop="4" />

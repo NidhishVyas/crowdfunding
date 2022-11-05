@@ -55,27 +55,27 @@ export default function Footer() {
         <Heading
           textAlign={useBreakpointValue({ base: "center", md: "left" })}
           fontFamily={"heading"}
-          color={useColorModeValue("teal.800", "white")}
+          color={useColorModeValue("red.800", "white")}
           as="h2"
           size="lg"
         >
           <Box
             as={"span"}
-            color={useColorModeValue("teal.400", "teal.300")}
+            color={useColorModeValue("red.400", "red.300")}
             position={"relative"}
             zIndex={10}
-            _after={{
-              content: '""',
-              position: "absolute",
-              left: 0,
-              bottom: 0,
-              w: "full",
-              h: "30%",
-              bg: useColorModeValue("teal.100", "teal.900"),
-              zIndex: -1,
-            }}
+            // _after={{
+            //   content: '""',
+            //   position: "absolute",
+            //   left: 0,
+            //   bottom: 0,
+            //   w: "full",
+            //   h: "30%",
+            //   bg: useColorModeValue("red.100", "red.900"),
+            //   zIndex: -1,
+            // }}
           >
-            <a href="/">🤝BetterFund</a>
+            <a href="/">₿CrowdFund</a>
           </Box>
         </Heading>
         <Stack direction={"row"} spacing={6}>

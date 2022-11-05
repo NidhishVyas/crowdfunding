@@ -39,10 +39,11 @@ const RequestRow = ({ id, request, approversCount, disabled }) => {
   const [loadingFinalize, /*setLoadingFinalize*/] = useState(false);
 
   return (
-    <Tr
+    <>
+        <Tr
       // bg={
       //   readyToFinalize && !request.complete
-      //     ? useColorModeValue("teal.100", "teal.700")
+      //     ? useColorModeValue("red.100", "red.700")
       //     : useColorModeValue("gray.100", "gray.700")
       // }
       opacity={request.complete ? "0.4" : "1"}
@@ -51,7 +52,7 @@ const RequestRow = ({ id, request, approversCount, disabled }) => {
       <Td>Need for xyz</Td>
       <Td isNumeric>10 ETH</Td>
       <Td>
-        <Link color="teal.500" isExternal>
+        <Link color="red.500" isExternal>
           0X654647
         </Link>
       </Td>
@@ -150,7 +151,7 @@ const RequestRow = ({ id, request, approversCount, disabled }) => {
             >
               <InfoIcon
                 as="span"
-                // color={useColorModeValue("teal.800", "white")}
+                // color={useColorModeValue("red.800", "white")}
                 display={
                   readyToFinalize && !request.complete ? "inline-block" : "none"
                 }
@@ -160,6 +161,128 @@ const RequestRow = ({ id, request, approversCount, disabled }) => {
         )}
       </Td>
     </Tr>
+    <Tr
+      // bg={
+      //   readyToFinalize && !request.complete
+      //     ? useColorModeValue("red.100", "red.700")
+      //     : useColorModeValue("gray.100", "gray.700")
+      // }
+      opacity={request.complete ? "0.4" : "1"}
+    >
+      <Td>2 </Td>
+      <Td>Need for xyz</Td>
+      <Td isNumeric>19 ETH</Td>
+      <Td>
+        <Link color="red.500" isExternal>
+          0X853717
+        </Link>
+      </Td>
+      <Td>2/{approversCount}</Td>
+      <Td>
+        <HStack spacing={2}>
+          <Tooltip
+            label={errorMessageApprove}
+            bg={useColorModeValue("white", "gray.700")}
+            placement={"top"}
+            color={useColorModeValue("gray.800", "white")}
+            fontSize={"1em"}
+          >
+            <WarningIcon
+              // color={useColorModeValue("red.600", "red.300")}
+              display={errorMessageApprove ? "inline-block" : "none"}
+            />
+          </Tooltip>
+          {request.complete ? (
+            <Tooltip
+              label="This Request has been finalized & withdrawn to the recipient,it may then have less no of approvers"
+              // bg={useColorModeValue("white", "gray.700")}
+              placement={"top"}
+              // color={useColorModeValue("gray.800", "white")}
+              fontSize={"1em"}
+            >
+              <CheckCircleIcon
+              // color={useColorModeValue("green.600", "green.300")}
+              />
+            </Tooltip>
+          ) : (
+            <Button
+              colorScheme="yellow"
+              variant="outline"
+              _hover={{
+                bg: "yellow.600",
+                color: "white",
+              }}
+              // onClick={onApprove}
+              isDisabled={disabled || request.approvalCount === approversCount}
+              isLoading={loadingApprove}
+            >
+              Approve
+            </Button>
+          )}
+        </HStack>
+      </Td>
+      <Td>
+        <Tooltip
+          label={errorMessageFinalize}
+          bg={useColorModeValue("white", "gray.700")}
+          placement={"top"}
+          color={useColorModeValue("gray.800", "white")}
+          fontSize={"1em"}
+        >
+          <WarningIcon
+            color={useColorModeValue("red.600", "red.300")}
+            display={errorMessageFinalize ? "inline-block" : "none"}
+            mr="2"
+          />
+        </Tooltip>
+        {request.complete ? (
+          <Tooltip
+            label="This Request has been finalized & withdrawn to the recipient,it may then have less no of approvers"
+            // bg={useColorModeValue("white", "gray.700")}
+            placement={"top"}
+            // color={useColorModeValue("gray.800", "white")}
+            fontSize={"1em"}
+          >
+            <CheckCircleIcon
+            // color={useColorModeValue("green.600", "green.300")}
+            />
+          </Tooltip>
+        ) : (
+          <HStack spacing={2}>
+            <Button
+              colorScheme="green"
+              variant="outline"
+              _hover={{
+                bg: "green.600",
+                color: "white",
+              }}
+              isDisabled={disabled || (!request.complete && !readyToFinalize)}
+              // onClick={onFinalize}
+              isLoading={loadingFinalize}
+            >
+              Finalize
+            </Button>
+
+            <Tooltip
+              label="This Request is ready to be Finalized because it has been approved by 50% Approvers"
+              // bg={useColorModeValue("white", "gray.700")}
+              placement={"top"}
+              // color={useColorModeValue("gray.800", "white")}
+              fontSize={"1.2em"}
+            >
+              <InfoIcon
+                as="span"
+                // color={useColorModeValue("red.800", "white")}
+                display={
+                  readyToFinalize && !request.complete ? "inline-block" : "none"
+                }
+              />
+            </Tooltip>
+          </HStack>
+        )}
+      </Td>
+    </Tr>
+    </>
   );
 };
 
@@ -183,7 +306,7 @@ export default function Requests({
         <Container px={{ base: "4", md: "12" }} maxW={"7xl"} align={"left"}>
           <Flex flexDirection={{ base: "column", md: "row" }} py={4}>
             <Box py="4">
-              <Text fontSize={"lg"} color={"teal.400"}>
+              <Text fontSize={"lg"} color={"red.400"}>
                 <ArrowBackIcon mr={2} />
                 <a href={`/campaign/CampaignSingle`}>Back to Campaign</a>
               </Text>
@@ -248,10 +371,10 @@ export default function Requests({
                     fontSize={"md"}
                     fontWeight={600}
                     color={"white"}
-                    bg={"teal.400"}
+                    bg={"red.400"}
                     href={"#"}
                     _hover={{
-                      bg: "teal.300",
+                      bg: "red.300",
                     }}
                   >
                     Add Withdrawal Request

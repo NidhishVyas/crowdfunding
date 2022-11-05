@@ -25,7 +25,7 @@ export default function NewRequest() {
       <link rel="icon" href="/logo.svg" />
       <main>
         <Stack spacing={8} mx={"auto"} maxW={"2xl"} py={12} px={6}>
-          <Text fontSize={"lg"} color={"teal.400"} justifyContent="center">
+          <Text fontSize={"lg"} color={"red.400"} justifyContent="center">
             <ArrowBackIcon mr={2} />
             <a href={`/campaign/withdrawal/requests`}>Back to Requests</a>
           </Text>
@@ -61,10 +61,10 @@ export default function NewRequest() {
                 </FormControl>
                 <Stack spacing={10}>
                   <Button
-                    bg={"teal.400"}
+                    bg={"red.400"}
                     color={"white"}
                     _hover={{
-                      bg: "teal.500",
+                      bg: "red.500",
                     }}
                     type="submit"
                   >

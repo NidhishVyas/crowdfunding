@@ -42,11 +42,11 @@ export default function NewCampaign() {
                   <Link
                     py={2}
                     rounded={"lg"}
-                    bg={"teal.400"}
+                    bg={"red.400"}
                     textAlign={"center"}
                     color={"white"}
                     _hover={{
-                      bg: "teal.500",
+                      bg: "red.500",
                     }}
                     href="/campaign"
                   >
@@ -57,7 +57,7 @@ export default function NewCampaign() {
               <Text color={"gray.500"} mt={3}>
                 Not a member?
                 <Link
-                  color={"teal.400"}
+                  color={"red.400"}
                   ml={1.5}
                   href="/register"
                   textDecoration={"underline"}

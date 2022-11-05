@@ -114,7 +114,7 @@ function CampaignCard({
                   h={5}
                   w={5}
                   alignSelf={"center"}
-                  color={"teal.400"}
+                  color={"red.400"}
                 />
                 <Icon
                   as={FaTrash}
@@ -122,7 +122,7 @@ function CampaignCard({
                   w={4}
                   ml={2}
                   alignSelf={"center"}
-                  color={"teal.400"}
+                  color={"red.400"}
                 />
               </chakra.a>
             </Tooltip>
@@ -145,7 +145,7 @@ function CampaignCard({
                 pt="2"
               >
                 <Text as="span" fontWeight={"bold"}>
-                  {balance > 0 ? "aaaa" : "0, Become a Donor 😄"}
+                {balance > 0 ? target - balance : "0, Become a Donor 😄"}
                 </Text>
                 <Text
                   as="span"
@@ -166,13 +166,13 @@ function CampaignCard({
               </Box>
 
               <Text fontSize={"md"} fontWeight="normal">
-                target of ETH
+                target of {target} ETH
               </Text>
               <Progress
-                colorScheme="teal"
+                colorScheme="red"
                 size="sm"
-                value={10}
-                max={100}
+                value={balance}
+                max={target}
                 mt="2"
               />
             </Box>{" "}
@@ -188,14 +188,14 @@ export default function Home() {
 
   return (
     <div>
-      <title>BetterFund</title>
+      <title>CrowdFund</title>
       <meta
         name="description"
         content="Transparent Crowdfunding in Blockchain"
       />
       <link rel="icon" href="/logo.svg" />
       <main className={styles.main}>
-        <Container py={{ base: "4", md: "12" }} maxW={"7xl"} align={"left"}>
+        {/* <Container py={{ base: "4", md: "12" }} maxW={"7xl"} align={"left"}>
           {" "}
           <Heading
             textAlign={useBreakpointValue({ base: "left" })}
@@ -212,20 +212,20 @@ export default function Home() {
               fontSize={"md"}
               fontWeight={600}
               color={"white"}
-              bg={"teal.400"}
+              bg={"red.400"}
               _hover={{
-                bg: "teal.300",
+                bg: "red.300",
               }}
             >
               Create Campaign
             </Button>
           </a>
-        </Container>
+        </Container> */}
         <Container py={{ base: "4", md: "12" }} maxW={"7xl"}>
           <HStack spacing={2}>
             <SkeletonCircle size="4" />
             <Heading as="h2" size="lg">
-              Open Campaigns
+              My Campaigns
             </Heading>
           </HStack>
 
@@ -235,38 +235,38 @@ export default function Home() {
             <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} py={8}>
               <div>
                 <CampaignCard
-                  name="hello hello"
+                  name="Covid Relief Fund"
                   description="hello hello hello hello hello hello hello hello hello hello"
-                  creatorId="1"
+                  creatorId="C09"
                   imageURL="https://cdni.autocarindia.com/utils/imageresizer.ashx?n=https://cms.haymarketindia.net/model/uploads/modelimages/Mahindra-Scorpio-N-300620221053.jpg&w=872&h=578&q=75&c=1"
                   id="1"
-                  target="1"
-                  balance="1"
+                  target="999"
+                  balance="678"
                   ethPrice="1"
                 />
               </div>
               <div>
                 <CampaignCard
-                  name="hello hello"
+                  name="Covid Relief Fund"
                   description="hello hello hello hello hello hello hello hello hello hello"
-                  creatorId="1"
+                  creatorId="C09"
                   imageURL="https://cdni.autocarindia.com/utils/imageresizer.ashx?n=https://cms.haymarketindia.net/model/uploads/modelimages/Mahindra-Scorpio-N-300620221053.jpg&w=872&h=578&q=75&c=1"
                   id="1"
-                  target="1"
-                  balance="1"
-                  ethPrice="1"
+                  target="187"
+                  balance="98"
+                  ethPrice="3"
                 />
               </div>
               <div>
                 <CampaignCard
-                  name="hello hello"
+                  name="Covid Relief Fund"
                   description="hello hello hello hello hello hello hello hello hello hello"
-                  creatorId="1"
+                  creatorId="C09"
                   imageURL="https://cdni.autocarindia.com/utils/imageresizer.ashx?n=https://cms.haymarketindia.net/model/uploads/modelimages/Mahindra-Scorpio-N-300620221053.jpg&w=872&h=578&q=75&c=1"
                   id="1"
-                  target="1"
-                  balance="1"
-                  ethPrice="1"
+                  target="300"
+                  balance="246"
+                  ethPrice="2"
                 />
               </div>
             </SimpleGrid>
