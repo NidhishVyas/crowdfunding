@@ -59,11 +59,11 @@ export default function NewCampaign() {
                   <Link
                     py={2}
                     rounded={"lg"}
-                    bg={"teal.400"}
+                    bg={"red.400"}
                     textAlign={"center"}
                     color={"white"}
                     _hover={{
-                      bg: "teal.500",
+                      bg: "red.500",
                     }}
                     href="/"
                   >
